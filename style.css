@@ -1,0 +1,185 @@
+/* LiveArchive 公開ページ共通スタイル。JavaScript・外部ライブラリ・外部フォントは使わない。
+   配色はアプリの落ち着いた色(生成り・ネイビー・テラコッタ)に合わせる。 */
+:root {
+  --ground: #f4eedf;
+  --card: #fbf8f0;
+  --ink: #2a2622;
+  --muted: #6b6358;
+  --line: rgba(42, 38, 34, 0.14);
+  --navy: #2f5d7c;
+  --terracotta: #b8472a;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #1b1917;
+    --card: #262320;
+    --ink: #ede6d6;
+    --muted: #a39b8e;
+    --line: rgba(237, 230, 214, 0.16);
+    --navy: #7fb0cf;
+    --terracotta: #e27a57;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.page {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3.5rem;
+}
+
+.site-header {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.app-name {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: var(--terracotta);
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.meta {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+main > p:first-child {
+  margin-top: 0;
+}
+
+section {
+  margin-top: 2rem;
+}
+
+h2 {
+  margin: 0 0 0.5rem;
+  padding-left: 0.65rem;
+  border-left: 3px solid var(--navy);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+p {
+  margin: 0.6rem 0;
+}
+
+ul {
+  margin: 0.6rem 0;
+  padding-left: 1.4rem;
+}
+
+li {
+  margin: 0.3rem 0;
+}
+
+a {
+  color: var(--navy);
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+.card {
+  margin-top: 1.25rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.card dl {
+  margin: 0;
+}
+
+.card dt {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.card dt:first-child {
+  margin-top: 0;
+}
+
+.card dd {
+  margin: 0.1rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* 公開前に必ず埋める箇所。公開前チェックで、この表示が残っていないことを確認する。 */
+.todo {
+  background: rgba(184, 71, 42, 0.16);
+  color: inherit;
+  padding: 0 0.2em;
+  border-radius: 3px;
+}
+
+.site-footer {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.site-footer p {
+  margin: 0.3rem 0;
+}
+
+/* トップページ: リンクだけの一覧 */
+.link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link-list li {
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.link-list a {
+  display: block;
+  padding: 0.9rem 0.25rem;
+  font-size: 1.05rem;
+  text-decoration: none;
+}
